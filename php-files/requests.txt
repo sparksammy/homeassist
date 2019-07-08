@@ -1,1 +1,1 @@
- open the painting program
+ this will change to the text field if the IFTTT connection was successful. 
