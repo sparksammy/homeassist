@@ -1,0 +1,73 @@
+HTTPCONTROLLER="https://sparksammy.com/computercontrol/requests.txt" # Change this!
+a=$(wget -qO- $HTTPCONTROLLER)
+echo "Default A is: $a"
+while true
+do
+	if [ -n "$b" ]; then
+		if [ "$a" != "$b" ]; then
+			a=$(wget -qO- $HTTPCONTROLLER)
+			echo "New A is: $a"
+			echo $a
+			reala=$(echo "$a" | tr '[:upper:]' '[:lower:]')
+			sleep 1
+			if grep -q "test" <<<"$reala"; then
+				echo It works!
+				espeak "It works!"
+			elif grep -q "firefox" <<< "$reala"; then
+				echo "Opening firefox"
+				firefox https://sparksammy.com </dev/null &>/dev/null &
+				espeak "Here is firefox"
+			elif grep -q "pop shop" <<< "$reala"; then
+				echo "Opening the pop shop"
+				io.elementary.appcenter </dev/null &>/dev/null &
+				espeak "Here is the pop shop"
+			elif grep -q "the video editor" <<< "$reala"; then
+				echo "Opening Kdenlive"
+				kdenlive </dev/null &>/dev/null &
+				espeak "Here is K den live"
+			elif grep -q "the painting program" <<< "$reala"; then
+				echo "Opening krita"
+				krita </dev/null &>/dev/null &
+				espeak "Here is Krita"
+			elif grep -q "mouse pad" <<< "$reala"; then
+				echo "Opening Mousepad"
+				mousepad </dev/null &>/dev/null &
+				espeak "Here is Mouse pad"
+			elif grep -q "steam" <<< "$reala"; then
+				echo "Opening Steam"
+				steam </dev/null &>/dev/null &
+				espeak "Here is Steam"
+			elif grep -q "epic games" <<< "$reala"; then
+				echo "Opening Epic Games Launcher"
+				lutris lutris:rungameid/1 </dev/null &>/dev/null &
+				espeak "Here is the Epic Games Launcher"
+			elif grep -q "bonzi" <<< "$reala"; then
+				echo "Opening Bonzi Buddy"
+				wine "/home/sparksammy/.wine/dosdevices/c:/Program Files (x86)/BonziBuddy432/BonziBDY_4.EXE" </dev/null &>/dev/null &
+				espeak "Here is Bonzi Buddy"
+			elif grep -q "lego game" <<< "$reala"; then
+				echo "Opening The Lego Clone"
+				wine "/home/sparksammy/.wine/drive_c/RBXLegacy/1.16.2/RBXLegacyLauncher.exe" </dev/null &>/dev/null &
+				espeak "Here are the digital legos"
+			elif grep -q "minecraft" <<< "$reala"; then
+				echo "Opening Minecraft"
+				minecraft-launcher </dev/null &>/dev/null &
+				espeak "Here is Mine Craft"
+			elif grep -q "close the window" <<< "$reala"; then
+				echo "Closing the window..."
+				xdotool getactivewindow windowkill
+				espeak "Closed the window..."
+			elif grep -q "obs" <<< "$reala"; then
+				echo "Opening OBS"
+				obs </dev/null &>/dev/null &
+				espeak "Here is O B S"
+			else
+				espeak "Error, assuming unknown command"
+				echo "Unknown command!"
+			fi
+		fi
+	fi
+        sleep 3
+	b=$(wget -qO- $HTTPCONTROLLER)
+	echo "B is: $b"
+done
