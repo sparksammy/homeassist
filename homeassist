@@ -61,6 +61,46 @@ do
 				echo "Opening OBS"
 				obs </dev/null &>/dev/null &
 				espeak "Here is O B S"
+			elif grep -q "dark table" <<< "$reala"; then
+				echo "Opening darktable"
+				darktable </dev/null &>/dev/null &
+				espeak "Here is dark table"
+			elif grep -q "visual studio" <<< "$reala"; then
+				echo "Opening VSCode"
+				code </dev/null &>/dev/null &
+				espeak "Here is Visual Studio Code"
+			elif grep -q "blue griffon" <<< "$reala"; then
+				echo "Opening BlueGriffon"
+				code </dev/null &>/dev/null &
+				espeak "Here is Blue Griffon"
+			elif grep -q "weather" <<< "$reala"; then
+				echo "Opening GNOME Weather"
+				gnome-weather </dev/null &>/dev/null &
+				espeak "Here is the weather"
+			elif grep -q "office" <<< "$reala"; then
+				echo "Opening LibreOffice"
+				libreoffice </dev/null &>/dev/null &
+				espeak "Here is Libre Office"
+			elif grep -q "racing game" <<< "$reala"; then
+				echo "Opening the kart game"
+				supertuxkart </dev/null &>/dev/null &
+				espeak "Here is Super Tux Kart"
+			elif grep -q "burger space" <<< "$reala"; then
+				echo "Opening burgerspace"
+				burgerspace </dev/null &>/dev/null &
+				espeak "Here is the burger time clone"
+			elif grep -q "mario clone" <<< "$reala"; then
+				echo "Opening SuperTux"
+				supertux </dev/null &>/dev/null &
+				espeak "Here is the Mario clone"
+			elif grep -q "never ball" <<< "$reala"; then
+				echo "Opening neverball"
+				neverball </dev/null &>/dev/null &
+				espeak "Here is never ball"
+			elif grep -q "platform shooter game" <<< "$reala"; then
+				echo "Opening TeeWorlds"
+				teeworlds </dev/null &>/dev/null &
+				espeak "Here is teeworlds"
 			else
 				espeak "Error, assuming unknown command"
 				echo "Unknown command!"
