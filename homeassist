@@ -1,4 +1,4 @@
-HTTPCONTROLLER="https://sparksammy.com/computercontrol/requests.txt" # Change this!
+HTTPCONTROLLER="NICETRYLOSER" # Change this!
 a=$(wget -qO- $HTTPCONTROLLER)
 echo "Default A is: $a"
 while true
