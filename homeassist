@@ -104,7 +104,7 @@ do
 			elif grep -q "shut down" <<< "$reala"; then
 				echo "Shutting down"
 				espeak "Have a good day!"
-				pm-suspend </dev/null &>/dev/null & #Suspend for WOL on HP Omen 870-224 (my PC)
+				sudo pm-suspend </dev/null &>/dev/null & #Suspend for WOL on HP Omen 870-224 (my PC)
 			else
 				espeak "Error, assuming unknown command"
 				echo "Unknown command!"
