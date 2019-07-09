@@ -11,3 +11,5 @@ Control your Ubuntu/Pop!_OS computer with IFTTT using Google Home (and other ser
 
 Figure A:
 
+![text phrase](text-phrase.png)
+![web request](webrequest.png)
