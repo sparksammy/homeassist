@@ -101,6 +101,10 @@ do
 				echo "Opening TeeWorlds"
 				teeworlds </dev/null &>/dev/null &
 				espeak "Here is teeworlds"
+			elif grep -q "shutdown" <<< "$reala"; then
+				echo "Shutting down"
+				espeak "Have a good day!"
+				pm-suspend </dev/null &>/dev/null & #Suspend for WOL on HP Omen 870-224 (my PC)
 			else
 				espeak "Error, assuming unknown command"
 				echo "Unknown command!"
