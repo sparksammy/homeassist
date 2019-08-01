@@ -8,7 +8,7 @@ Control your Ubuntu/Pop!_OS computer with IFTTT using Google Home (and other ser
 * Download the "homeassist" bash script in the root of the master branch.
 * Do: sudo apt install -y pm-utils
 * Run in same directory as where it's downloaded: chmod +x homeassist
-* Edit first line in BASH to match YOUR URL, NOT MINE.
+* Edit first line in BASH to match YOUR REQUESTS.TXT URL, NOT MINE.
 * Run the bash script called "homeassist" USING ROOT
 
 Figure A:
